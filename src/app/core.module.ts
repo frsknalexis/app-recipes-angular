@@ -7,6 +7,7 @@ import { AuthService } from "./auth/auth.service";
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthGuard } from "./auth/auth.guard";
+import { LoggingService } from "./logging.service";
 
 @NgModule({
   providers: [
@@ -20,7 +21,8 @@ import { AuthGuard } from "./auth/auth.guard";
       useClass: AuthInterceptorService,
       multi: true
     },
-    AuthGuard
+    AuthGuard,
+    LoggingService
   ]
 })
 export class CoreModule {  }
